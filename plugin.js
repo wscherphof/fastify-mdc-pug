@@ -9,19 +9,19 @@ const pug = require('pug');
 
 async function plugin(fastify, options = {}) {
   const defaults = {
-    views: './views',
+    root: './views',
     propertyName: 'view',
   };
   options = Object.assign(defaults, options);
-  const { views, propertyName } = options;
+  const { root, propertyName } = options;
+  const basedir = path.resolve('node_modules');
 
-  const unusedPropertyName = 'pugUnextended';
   fastify.register(require('point-of-view'), {
-    propertyName: unusedPropertyName,
+    propertyName: 'pugUnextended',
     engine: { pug },
-    root: views,
+    root,
     options: {
-      basedir: path.resolve('node_modules'),
+      basedir,
     },
   });
 
@@ -34,17 +34,17 @@ async function plugin(fastify, options = {}) {
           usage:
           != include('template')
         */
-        function render(file) {
-          options.basedir = path.resolve('node_modules');
+        function renderFile(file) {
+          options.basedir = basedir;
           return pug.renderFile(file, options);
         }
         try {
-          return render(path.join(views, template + '.pug'));
+          return renderFile(path.join(root, template + '.pug'));
         } catch (error) {
-          return render(path.join(views, template, 'index.pug'));
+          return renderFile(path.join(root, template, 'index.pug'));
         }
       };
-      return object[unusedPropertyName](template, options);
+      return object.pugUnextended(template, options);
     };
   }
 
