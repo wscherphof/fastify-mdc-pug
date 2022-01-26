@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/wscherphof/fastify-mdc-pug#readme",
   "dependencies": {
+    "@fontsource/roboto": "^4.5.1",
     "fastify-plugin": "^3.0.1",
+    "material-icons": "^1.10.6",
     "mdc-pug": "^3.0.0-beta.5",
     "point-of-view": "^5.0.0"
   },
@@ -30,8 +32,12 @@
     "@prettier/plugin-pug": "^1.19.2",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.0",
     "prettier": "^2.5.1",
-    "husky": "^7.0.0"
+    "stylelint": "^14.3.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard-scss": "^3.0.0"
   },
   "peerDependencies": {
     "sass": "^1.48.0"

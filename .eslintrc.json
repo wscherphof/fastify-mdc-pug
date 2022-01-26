@@ -5,5 +5,17 @@
     "node": true
   },
   "extends": ["eslint:recommended", "prettier"],
+  "overrides": [
+    {
+      "files": ["index.js"],
+      "env": {
+        "browser": true,
+        "node": false
+      },
+      "parserOptions": {
+        "sourceType": "module"
+      }
+    }
+  ],
   "rules": {}
 }

@@ -1,0 +1,14 @@
+include /mdc-pug/index
+
+-
+  function randomId() {
+    const random = Math.random();
+    return 'id' + `${random}`.substring(2);
+  }
+
+mixin mdc
+  - const id = randomId();
+  span(id=id)
+    block
+  - const script = `mdc.autoInit(${id});`;
+  script= script
