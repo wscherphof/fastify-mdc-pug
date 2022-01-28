@@ -65,13 +65,15 @@ include /fastify-mdc-pug/index
   <your-content>
 ```
 
-Your content should be passed as a block to the `mdc` mixin, as shown, to ensure
-any containing MDC components are properly initialised in JavaScript.
+Your content should be passed as a block to the `mdc`
+[mixin](https://pugjs.org/language/mixins.html), as shown, to ensure any
+containing MDC components are properly initialised in JavaScript.
 
 ## Render Material Design Components
 
-See https://www.npmjs.com/package/mdc-pug for the documentation on how to render
-MDC components from your templates.
+The https://www.npmjs.com/package/mdc-pug provides the mixins to render MDC
+components from your templates. Its documentation pages are running here:
+https://mdc-pug.vercel.app/.
 
 Example:
 
