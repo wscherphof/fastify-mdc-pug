@@ -1,14 +1,17 @@
 include /mdc-pug/index
-
--
-  function randomId() {
-    const random = Math.random();
-    return 'id' + `${random}`.substring(2);
-  }
-
 mixin mdc
-  - const id = randomId();
+  -
+    const id = '__mdc__auto__init__';
+    const script = `
+      (function() {
+        const interval = setInterval(function() {
+          if (mdc) {
+            clearInterval(interval);
+            mdc.autoInit(${id});
+          }
+        });
+      })();
+    `
   span(id=id)
     block
-  - const script = `mdc.autoInit(${id});`;
   script= script
