@@ -5,7 +5,7 @@ mixin mdc
     const script = `
       (function() {
         const interval = setInterval(function() {
-          if (mdc) {
+          if (window.mdc) {
             clearInterval(interval);
             mdc.autoInit(${id});
           }
