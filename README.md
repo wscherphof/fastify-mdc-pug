@@ -71,8 +71,8 @@ containing MDC components are properly initialised in JavaScript.
 
 ## Render Material Design Components
 
-The https://www.npmjs.com/package/mdc-pug provides the mixins to render MDC
-components from your templates. Its documentation pages are running here:
+The https://www.npmjs.com/package/mdc-pug package provides the mixins to render
+MDC components from your templates. Its documentation pages are running here:
 https://mdc-pug.vercel.app/.
 
 Example:
